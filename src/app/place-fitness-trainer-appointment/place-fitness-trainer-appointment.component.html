@@ -1,0 +1,253 @@
+<div class="container-fluid" style=" margin-left:450px; margin-top:30px; border:2px solid black; padding-top:50px;padding-left:5%; padding-bottom:40px; width:60%;">
+    <form [formGroup]=" fitnessForm" (ngSubmit)="onSubmit()" novalidate>
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label>First Name</label>
+          <input [class.is-invalid]="fitnessForm.controls.firstname.invalid && fitnessForm.controls.firstname.touched"
+            formControlName="firstname" type="text" pattern="^[a-zA-Z]+$" class="form-control" autofocus />
+          <div *ngIf="fitnessForm.controls.firstname.invalid && fitnessForm.controls.firstname.touched">
+            <small *ngIf="fitnessForm.controls.firstname.errors?.required" class="text-danger">Firstname Is
+              Required</small>
+            <small *ngIf="fitnessForm.controls.firstname.errors?.pattern" class="text-danger">Firstname only ontain
+              characters</small>
+          </div>
+        </div>
+  
+        <div class="form-group col-md-4">
+          <label>Last Name</label>
+          <input formControlName="lastname" type="text"
+            [class.is-invalid]="fitnessForm.controls.lastname.invalid && fitnessForm.controls.lastname.touched"
+            formControlName="lastname" pattern="^[a-zA-Z]+$" class="form-control" />
+          <div *ngIf="fitnessForm.controls.lastname.invalid && fitnessForm.controls.lastname.touched">
+            <small *ngIf="fitnessForm.controls.lastname.errors?.required" class="text-danger">Lastname Is Required</small>
+            <small *ngIf="fitnessForm.controls.lastname.errors?.pattern" class="text-danger">Lastname only ontain
+              characters</small>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label>Age</label>
+          <input formControlName="age" type="number" value="age" class="form-control"  [class.is-invalid]="fitnessForm.controls.age.invalid && fitnessForm.controls.age.touched"/>
+          <div *ngIf="fitnessForm.controls.age.invalid && fitnessForm.controls.age.touched">
+            <small class="text-danger" *ngIf="fitnessForm.controls.age.errors?.required ">Age Is Required</small>
+            <small class="text-danger" *ngIf=" fitnessForm.controls.age.errors?.min || fitnessForm.controls.age.errors?.max">Age Must Be Less than 80 And Greater Than 16</small>
+          </div>
+        </div>
+        <div class="form-group col-md-4">
+          <label>Email</label>
+          <input formControlName="email" type="email" class="form-control" value="email"
+            [class.is-invalid]="fitnessForm.controls.email.invalid && fitnessForm.controls.email.touched"
+            pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" />
+          <div *ngIf="fitnessForm.controls.email.invalid && fitnessForm.controls.email.touched">
+            <small *ngIf="fitnessForm.controls.email.errors?.required" class="text-danger">Email Is Required</small>
+            <small *ngIf="fitnessForm.controls.email.errors?.pattern" class="text-danger">Please Enter a valid email
+              address
+              ex:anjali1998@gamil.com</small>
+          </div>
+        </div>
+      </div>
+  
+      <div class="form-row">
+        <div class="form-group col-md-8">
+          <label>Phone Number</label>
+          <input formControlName="phonenumber" type="tel" class="form-control"
+            [class.is-invalid]="fitnessForm.controls.phonenumber.invalid && fitnessForm.controls.phonenumber.touched"
+            pattern="^\d{10}$" />
+          <div *ngIf="fitnessForm.controls.phonenumber.invalid && fitnessForm.controls.phonenumber.touched">
+            <small *ngIf="fitnessForm.controls.phonenumber.errors?.required" class="text-danger">Phone Number Is
+              Required</small>
+            <small *ngIf="fitnessForm.controls.phonenumber.errors?.pattern" class="text-danger">Please Enter a 10 digit
+              phone number</small>
+          </div>
+        </div>
+      </div>
+    <div class="address" style="border: 1px solid black; padding-left:4px; width:68%;">
+      <fieldset>
+        <div class="form-row">
+          <div class="form-group col-md-8">
+          
+              <label>Street Address</label>
+              <input formControlName="streetaddress" type="text" class="form-control"
+                [class.is-invalid]="fitnessForm.controls.streetaddress.invalid && fitnessForm.controls.streetaddress.touched"
+                pattern="" />
+              <div *ngIf="fitnessForm.controls.streetaddress.invalid && fitnessForm.controls.streetaddress.touched">
+                <small *ngIf="fitnessForm.controls.streetaddress.errors?.required" class="text-danger">Street Address Is
+                  Required</small>
+                <!--<small *ngIf="fitnessForm.controls.streetaddress.errors?.pattern" class="text-danger">Street Address only
+                  ontain characters</small> -->
+              </div>
+            </div>
+          </div>
+    
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label>City</label>
+              <input formControlName="city" type="text" class="form-control"
+                [class.is-invalid]="fitnessForm.controls.city.invalid && fitnessForm.controls.city.touched"
+                pattern="^[a-zA-Z]+$" />
+              <div *ngIf="fitnessForm.controls.city.invalid && fitnessForm.controls.city.touched">
+                <small *ngIf="fitnessForm.controls.city.errors?.required" class="text-danger">City Name Is Required</small>
+                <small *ngIf="fitnessForm.controls.city.errors?.pattern" class="text-danger">City Name only Contain
+                  characters</small>
+              </div>
+            </div>
+    
+            <div class="form-group col-md-4">
+              <label>State</label>
+              <input formControlName="state" type="text" class="form-control"
+                [class.is-invalid]="fitnessForm.controls.state.invalid && fitnessForm.controls.state.touched"
+                pattern="^[a-zA-Z]+$" />
+              <div *ngIf="fitnessForm.controls.state.invalid && fitnessForm.controls.state.touched">
+                <small *ngIf="fitnessForm.controls.state.errors?.required" class="text-danger">State Name Is
+                  Required</small>
+                <small *ngIf="fitnessForm.controls.state.errors?.pattern" class="text-danger">State Name only ontain
+                  characters</small>
+              </div>
+            </div>
+          </div>
+    
+    
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label>Country</label>
+              <input formControlName="country" type="text" class="form-control"
+                [class.is-invalid]="fitnessForm.controls.country.invalid && fitnessForm.controls.country.touched"
+                pattern="^[a-zA-Z]+$" />
+              <div *ngIf="fitnessForm.controls.country.invalid && fitnessForm.controls.country.touched">
+                <small *ngIf="fitnessForm.controls.country.errors?.required" class="text-danger">Country Name Is
+                  Required</small>
+                <small *ngIf="fitnessForm.controls.country.errors?.pattern" class="text-danger">Country Name only ontain
+                  characters</small>
+              </div>
+            </div>
+    
+            <div class="form-group col-md-4">
+              <label>PinCode</label>
+              <input formControlName="pincode" type="number" class="form-control"
+                [class.is-invalid]="fitnessForm.controls.pincode.invalid && fitnessForm.controls.pincode.touched"
+                pattern="^[0-9]\d{5}$" />
+              <div *ngIf="fitnessForm.controls.pincode.invalid && fitnessForm.controls.pincode.touched">
+                <small *ngIf="fitnessForm.controls.pincode.errors?.required" class="text-danger">Pincode Is Required</small>
+                <small *ngIf="fitnessForm.controls.pincode.errors?.pattern" class="text-danger">Pincode Only Contain 6
+                  digits</small>
+              </div>
+            </div>
+          </div>
+      </fieldset>
+    </div>
+  
+      <div class="mb-3">
+        <label>Trainer Prefernces?</label>
+        <div class="form-check">
+          <input formControlName="trainerpreference" class="form-check-input" type="radio" name="trainerpreference"
+            value="Male Trainer" />
+          <label class="form-check-label">Male Trainer</label>
+        </div>
+        <div class="form-check">
+          <input formControlName="trainerpreference" class="form-check-input" name="trainerpreference" type="radio"
+            value="Female Trainer" />
+          <label class="form-check-label">Female Trainer</label>
+        </div>
+        <div class="form-check">
+          <input formControlName="trainerpreference" class="form-check-input" name="trainerpreference" type="radio"
+            value="No Preferences" />
+          <label class="form-check-label">No Preferences</label>
+        </div>
+        <div class="form-check">
+          <input formControlName="trainerpreference" class="form-check-input" name="trainerpreference" type="radio"
+            value="Other" />
+          <label class="form-check-label">Other</label>
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label>Do you need physiotherapist?</label>
+        <div class="form-check">
+          <input formControlName="physiotherapist" class="form-check-input" name="physiotherapist" value="Yes"
+            type="radio" />
+          <label class="form-check-label">Yes</label>
+        </div>
+        <div class="form-check">
+          <input formControlName="physiotherapist" class="form-check-input" value="No" name="physiotherapist"
+            type="radio" />
+          <label class="form-check-label">No</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="packages" class="col-form-label">Select Your Package :</label>
+        <div class="col-sm-8">
+          <select
+            class="form-control"
+            formControlName="packages"
+            [ngClass]="{
+              'is-invalid':
+                fitnessForm.controls.packages.touched &&
+                fitnessForm.controls.packages.invalid
+            }"
+          >
+            <option value="">--SELECT--</option>
+            <option value="500">Three Month Package - INR 500</option>
+            <option value="800">Six Month Package - INR 800</option>
+            <option value="1200">One Year Package - INR 1200</option>
+          </select>
+        </div>
+        <div
+          *ngIf="
+            fitnessForm.controls.packages.invalid &&
+            fitnessForm.controls.packages.touched
+          "
+        >
+          <small
+            *ngIf="fitnessForm.controls.packages.errors?.required"
+            class="text-danger"
+            >Please select an option.</small
+          >
+        </div>
+      </div>
+  
+  
+     <!-- <div class="mb-3">
+        <label> Select Packages</label>
+        <div class="form-check">
+          <input formControlName="packages" class="form-check-input" value="One time assessment only (INR 500)" name="packages" type="radio" />
+          <label class="form-check-label">One time assessment only (INR 500)</label>
+        </div>
+        <div class="form-check">
+          <input formControlName="packages" class="form-check-input" value="Four Weekly Session (INR 400/Session)" name="packages" type="radio" />
+          <label class="form-check-label">Four Weekly Session (INR 400/Session)</label>
+        </div>
+        <div class="form-check">
+          <input formControlName="packages" class="form-check-input" name="packages" type="radio" />
+          <label class="form-check-label">12 Weekly Session (INR 300/Session)</label>
+        </div>
+        <div class="form-check">
+          <input formControlName="packages" class="form-check-input" value="Other" name="packages" type="radio" />
+          <label class="form-check-label">Other</label>
+        </div>
+      </div>-->
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="INR">INR</label>
+          <input formControlName="inr" value="inr" [class.is-invalid]="fitnessForm.controls.inr.invalid && fitnessForm.controls.inr.touched"  type="number" class="form-control"  />
+          <div *ngIf="fitnessForm.controls.inr.invalid && fitnessForm.controls.inr.touched">
+            <small *ngIf="fitnessForm.controls.inr.errors?.required" class="text-danger">INR Is Required</small>
+          </div>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="paisa">Paisa</label>
+          <input formControlName="paisa"  [class.is-invalid]="fitnessForm.controls.paisa.invalid && fitnessForm.controls.paisa.touched" value="paisa" type="number" class="form-control" />
+          <div *ngIf="fitnessForm.controls.paisa.invalid && fitnessForm.controls.paisa.touched">
+            <small *ngIf="fitnessForm.controls.paisa.errors?.required" class="text-danger">Paisa Is Required</small>
+          </div>
+        </div>
+      </div>
+  
+      <button  type="submit" class="btn btn-success">
+        Submit Form
+      </button>
+  
+    </form>
+  </div>
+  

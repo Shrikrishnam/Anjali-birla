@@ -1,0 +1,83 @@
+  <div class="logo"> <!--div for logo-->
+      <div class="jumbotron mb-0 rounded-0 pb-2 pt-2 px-1">
+        <div >
+            <div class="row">
+                <div class="col-md-3 col-sm-12 text-center">
+                  <img src="https://img.icons8.com/ios-filled/100/000000/no-running.png"/>
+                </div>
+                <div class="col-md-9 col-sm-12 text-center " style="margin-top:20px;"><br/>
+                    <span class="display-4 font-weight-bold align-middle">FITNESS TRACKER</span>
+                </div>
+            </div>      
+        </div>
+    </div>
+    </div><!--div close-->
+
+       
+            <nav class="navbar  navbar-expand-lg navbar-dark  bg-dark ">
+            
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+          
+              <div class="collapse navbar-collapse" id="navbarSupportedContent" style="font-size:20px;">
+                <ul class="navbar-nav mr-auto " style="width:100%;">
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="/home">Home<i class="fa fa-home"></i>
+                      <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="/place-fitness-trainer-appointment">Place Appoinment<i class="fa fa-address-card"></i><span
+                        class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="/view-appointment">View Appointment<i class="fa fa-street-view"></i>
+                      <span class="sr-only">(current)</span></a>
+                  </li>
+                
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="/contact-us">Contact Us<i class="fa fa-phone-square"></i>
+                      <span class="sr-only">(current)</span></a>
+                  </li>
+                </ul>
+              </div>
+          </nav>
+      
+
+
+      <div class="sidebar" style="height:100vh ; margin-top:30px; float:left; "><!--div for side nav-->
+            <div class="container-fluid ">
+              <div class="row ">
+                <div class="col-12  order-12 order-sm-1  pl-0 " style="font-size:20px;">
+                            <ul class="list-group list-group-flush">
+                                  <li class="nav-item active">
+                                    <a class="nav-link" routerLink="/home">Home<i class="fa fa-home"></i>
+                                      <span class="sr-only">(current)</span></a>
+                                  </li>
+                                  
+                                  <li class="nav-item">
+                                    <a class="nav-link" routerLink="/place-fitness-trainer-appointment">Place Appoinment<i
+                                        class="fa fa-address-card"></i>
+                                      <span class="sr-only">(current)</span></a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" routerLink="/view-appointment">View Appointment<i class="fa fa-street-view"></i>
+                                      <span class="sr-only">(current)</span></a>
+                                  </li>
+                                
+                                  <li class="nav-item">
+                                    <a class="nav-link" routerLink="/contact-us">Contact Us<i class="fa fa-phone-square"></i>
+                                      <span class="sr-only">(current)</span></a>
+                                  </li>
+                            </ul>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+   
+          
+          
+
+
+<router-outlet></router-outlet>

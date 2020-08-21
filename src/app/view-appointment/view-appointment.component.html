@@ -1,0 +1,207 @@
+<div class="container-fluid" style="width:85%; margin-left:80px; margin-top:30px;">
+  <table class="table table-hover table-striped">
+    <thead>
+      <tr>
+        <th class="h1">Sl NO</th>
+        <th class="h2 ">Name</th>
+        <th class="h3">Address</th>
+        <th class="h4">City</th>
+        <th class="h5">Package</th>
+        <th class="h6">Trainer Preference</th>
+        <th class="h7">Phone</th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor="let index of Data ; let i=index">
+        <td class="text-center">
+          {{ i + 1 }}
+        </td>
+        <td>
+          {{ index.firstname + " " + index.lastname }}
+        </td>
+        <td>
+          {{ index.streetaddress + ", " + index.state }}
+        </td>
+        <td>
+          {{ index.city }}
+        </td>
+        <td>
+          {{  index.packages }}
+        </td>
+        <td>
+          {{ index.trainerpreference }}
+        </td>
+        <td>
+          {{ index.phonenumber }}
+        </td>
+  
+    
+          <a class="btn btn-md text-white btn-success" (click)="edit(index,index.id)"><i class="fa fa-pencil"></i></a>
+    
+    
+          <a class="btn btn-md text-white btn-danger" (click)="delete(index.id)"><i class="fa fa-trash"></i></a>
+      
+      </tr>
+    </table>
+
+  </div>
+
+  <div *ngIf="alert" class="container-fluid" style="margin-left:80px;padding-top:30px; width:85%; padding-bottom:40px; margin-top:50px;">
+    <form > 
+      <table class= "table table-stripped">
+          <tr>
+            <td>First Name</td>
+            <td><input type="text"  value="firstname" [value]="updateForm.firstname" (keyup)="updateForm.firstname=$event.target.value" autofocus></td>
+            <td></td>
+            <td></td>
+            <td></td>
+       
+          </tr>
+        
+  
+          <tr>
+            <td>Last Name</td>
+            <td><input type="text"  value="lastname" [value]="updateForm.lastname" (keyup)="updateForm.lastname=$event.target.value"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        
+          </tr>
+  
+          <tr>
+            <td>City</td>
+            <td><input type="text"  value="city" [value]="updateForm.city" (keyup)="updateForm.city=$event.target.value"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+         
+          </tr>
+  
+          <tr>
+            <td>Phone Number</td>
+            <td><input type="text"  value="phonenumber" [value]="updateForm.phonenumber" (keyup)="updateForm.phonenumber=$event.target.value"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+     
+          </tr>
+  
+          <tr>
+            <td>Email</td>
+            <td><input type="text"  value="email" [value]="updateForm.email" (keyup)="updateForm.email=$event.target.value"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        
+          </tr>
+  
+          <tr>
+            <td>Age</td>
+            <td><input type="text"  value="age" [value]="updateForm.age" (keyup)="updateForm.age=$event.target.value"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+       
+          </tr>
+  
+          <tr>
+            <td>Street Address</td>
+            <td><input type="text"  name="streetaddress" [value]="updateForm.streetaddress" (keyup)="updateForm.streetaddress=$event.target.value"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+         
+          </tr>
+  
+          <tr>
+            <td>State</td>
+            <td><input type="text" name="state" [value]="updateForm.state" (keyup)="updateForm.state=$event.target.value"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+       
+          </tr>
+  
+          <tr>
+            <td>Country</td>
+            <td><input type="text" name="country" [value]="updateForm.country" (keyup)="updateForm.country=$event.target.value"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+      
+          </tr>
+  
+          <tr>
+            <td>Pincode</td>
+            <td><input type="text" name="pincode" [value]="updateForm.pincode" (keyup)="updateForm.pincode=$event.target.value"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+         
+          </tr>
+  
+          <tr>
+            <td>INR</td>
+            <td><input type="text" name="inr" [value]="updateForm.inr" (keyup)="updateForm.inr=$event.target.value"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+         
+          </tr>
+  
+          <tr>
+            <td>Paisa</td>
+            <td><input type="text" name="paisa" [value]="updateForm.paisa" (keyup)="updateForm.paisa=$event.target.value"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        
+          </tr>
+        
+  
+          <tr>
+            <td>Trainer Prefernces?</td>
+              <td><input type="radio"  class="form-input-check" id="pref1" name="trainerpreference" [value]="updateForm.trainerpreference" (keyup)="updatForm.trainerpreference">Male Trainer</td>
+        
+              <td><input type="radio" class="form-input-check" id="pref2" name="trainerpreference" [value]="updateForm.trainerpreference" (keyup)="updatForm.trainerpreference">Female Trainer</td>
+          
+              <td><input type="radio"  class="form-input-check" id="pref3" name="trainerpreference" [value]="updateForm.trainerpreference" (keyup)="updatForm.trainerpreference">No Preferece</td>
+         
+              <td><input type="radio"  class="form-input-check" id="pref4" name="trainerpreference" [value]="updateForm.trainerpreference" (keyup)="updatForm.trainerpreference">Other</td>
+             
+          </tr>
+    
+  
+        
+  
+            <tr>
+              <td>Do you need physiotherapist?</td>
+                <td><input type="radio" value="Yes" class="form-input-check" id="yes" name="physiotherapist" [value]="updateForm.physiotherapist" (keyup)="updatForm.physiotherapist">Yes</td>
+                <td><input type="radio" value="No" class="form-input-check" id="yes" name="physiotherapist" [value]="updateForm.physiotherapist" (keyup)="updatForm.physiotherapist">No</td>
+                <td></td>
+                <td></td>
+            </tr>
+  
+            <tr>
+              <td>Select Packages</td>
+              <td><select [value]="updateForm.packages" (change)="updateForm.packages=$event.target.value">
+              <option value="-1" selected>select..</option>
+              <option value="500">Three Month Package - INR 500</option>
+              <option value="800">Six Month Package - INR 800</option>
+              <option value="1200">One Year Package - INR 1200</option>
+              </select></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          
+       
+       
+      </table>
+  
+        <button (click)="updateRecord()" type="button" class="btn btn-success" style="margin-left:500px; width:35%; margin-top:6%;">Update Form</button>
+  
+    </form>
+  
+  </div>
+
